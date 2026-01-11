@@ -1,6 +1,7 @@
 "use client";
 import { Plane, Clock } from "lucide-react";
 
+
 import { Flight } from './interfaceFlight';
 
 interface FlightResultsProps {
@@ -21,7 +22,7 @@ const FlightResults = ({ flights, onSelectFlight }: FlightResultsProps) => {
                             <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
                                 <div className="flex-1 w-full">
                                     <div className="flex items-center space-x-4 mb-4">
-                                        <div className="bg-[#0F172A] p-4 rounded-xl shadow-lg">
+                                        <div className="bg-orange-500 p-4 rounded-xl shadow-lg">
                                             <Plane className="w-8 h-8 text-white" />
                                         </div>
                                         <div>
@@ -41,9 +42,9 @@ const FlightResults = ({ flights, onSelectFlight }: FlightResultsProps) => {
                                                 <Clock className="w-4 h-4" />
                                                 <span className="text-sm font-medium">{flight.duration}</span>
                                             </div>
-                                            <div className="w-full h-1 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full relative">
-                                                <div className="absolute -top-2 left-0 w-4 h-4 bg-blue-500 rounded-full"></div>
-                                                <div className="absolute -top-2 right-0 w-4 h-4 bg-indigo-500 rounded-full"></div>
+                                            <div className="w-full h-1 bg-gradient-to-r from-orange-600 to-yellow-500 rounded-full relative">
+                                                <div className="absolute -top-2 left-0 w-4 h-4 bg-orange-500 rounded-full"></div>
+                                                <div className="absolute -top-2 right-0 w-4 h-4 bg-orange-500 rounded-full"></div>
                                             </div>
                                         </div>
 
@@ -55,13 +56,13 @@ const FlightResults = ({ flights, onSelectFlight }: FlightResultsProps) => {
                                 </div>
 
                                 <div className="text-center lg:text-right">
-                                    <p className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-2">
+                                    <p className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-yellow-500 bg-clip-text text-transparent mb-2">
                                         £{flight.price}
                                     </p>
                                     <p className="text-sm text-gray-600 mb-4">per person</p>
                                     <button
                                         onClick={() => onSelectFlight(flight)}
-                                        className="px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl transform hover:scale-105 font-semibold"
+                                        className="px-8 py-3 bg-gradient-to-r from-orange-600 to-yellow-500 text-white rounded-xl hover:from-orange-700 hover:to-yellow-700 transition-all shadow-lg hover:shadow-xl transform hover:scale-105 font-semibold"
                                     >
                                         Book Now
                                     </button>

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Plane, Menu } from "lucide-react";
+
 interface HeaderProps {
   setShowPrivacy: (val: boolean) => void;
 }

@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { X } from "lucide-react";
 import {Flight} from "./interfaceFlight";
+import { Plane, Menu, Calendar, Clock, MapPin } from "lucide-react";
+
 
 
 
