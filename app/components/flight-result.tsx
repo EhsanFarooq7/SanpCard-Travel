@@ -1,7 +1,5 @@
 "use client";
 import { Plane, Clock } from "lucide-react";
-
-
 import { Flight } from './interfaceFlight';
 
 interface FlightResultsProps {

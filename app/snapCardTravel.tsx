@@ -49,10 +49,33 @@ const SnapcardTravel = () => {
         setShowBooking(true);
     };
 
-    const handleConfirmBooking = () => {
-        alert('Booking confirmed! We will contact you shortly with details.');
-        setShowBooking(false);
-        setSelectedFlight(null);
+    // const handleConfirmBooking = () => {
+    //     alert('Booking confirmed! We will contact you shortly with details.');
+    //     setShowBooking(false);
+    //     setSelectedFlight(null);
+    // };
+    const handleConfirmBooking = async (userDetails: any) => {
+        try {
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    flight: selectedFlight,
+                    passengers: searchParams?.passengers || 1,
+                    userDetails: userDetails // These details come from your BookingModal form
+                }),
+            });
+
+            if (response.ok) {
+                alert('Booking request sent! We will contact you at admin@snapcardtravel.co.uk shortly.');
+                setShowBooking(false);
+                setSelectedFlight(null);
+            } else {
+                alert('Something went wrong. Please try again.');
+            }
+        } catch (error) {
+            console.error("Error sending booking:", error);
+        }
     };
 
     return (

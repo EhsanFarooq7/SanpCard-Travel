@@ -10,19 +10,52 @@ const QuoteForm = () => {
         passengers: 1,
         message: ''
     });
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault(); // Prevent page refresh
 
-    const handleSubmit = () => {
-        alert('Thank you! We will send you a quote shortly.');
-        setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            destination: '',
-            date: '',
-            passengers: 1,
-            message: ''
-        });
+        try {
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    type: 'QUOTE_REQUEST', // Adding a type to help the API distinguish
+                    formData: formData
+                }),
+            });
+
+            if (response.ok) {
+                alert('Thank you! Your quote request has been sent to our team.');
+                // Reset form
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    destination: '',
+                    date: '',
+                    passengers: 1,
+                    message: ''
+                });
+            } else {
+                alert('Failed to send request. Please try again or contact us directly.');
+            }
+        } catch (error) {
+            console.error("Error submitting quote:", error);
+            alert('An error occurred. Please check your internet connection.');
+        }
     };
+
+    // const handleSubmit = () => {
+    //     alert('Thank you! We will send you a quote shortly.');
+    //     setFormData({
+    //         name: '',
+    //         email: '',
+    //         phone: '',
+    //         destination: '',
+    //         date: '',
+    //         passengers: 1,
+    //         message: ''
+    //     });
+    // };
 
     return (
         <section className="py-20 bg-gradient-to-r from-gray-200 to-white-100" id="quote">

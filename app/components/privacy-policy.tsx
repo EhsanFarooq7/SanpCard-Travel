@@ -70,7 +70,7 @@ const PrivacyModal = ({ onClose }: PrivacyModalProps) => {
 
                         <h3 className="font-bold text-xl text-gray-800 mt-6 mb-3">8. Contact Us</h3>
                         <p>If you have any questions about this Privacy Policy or your data, contact us at:</p>
-                        <p className="font-semibold">Email: info@snapcardltd.co.uk</p>
+                        <p className="font-semibold">Email: admin@snapcardtravel.co.uk</p>
                     </div>
                 </div>
             </div>

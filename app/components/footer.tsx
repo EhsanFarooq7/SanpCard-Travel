@@ -33,7 +33,7 @@ const Footer = ({ setShowPrivacy }: FooterProps) => {
                         <ul className="space-y-2 text-gray-400 text-sm">
                             <li className="flex items-center space-x-2">
                                 <Mail className="w-4 h-4" />
-                                <span>info@snapcardltd.co.uk</span>
+                                <span>admin@snapcardtravel.co.uk</span>
                             </li>
                             <li className="flex items-center space-x-2">
                                 <Phone className="w-4 h-4" />
@@ -55,8 +55,8 @@ const Footer = ({ setShowPrivacy }: FooterProps) => {
                                     Privacy Policy
                                 </button>
                             </li>
-                            <li><a href="#" className="hover:text-white transition">Terms & Conditions</a></li>
-                            <li><a href="https://travelsunbooking.co.uk/" className="hover:text-white transition">travelsunbooking.co.uk</a></li>
+                            {/* <li><a href="#" className="hover:text-white transition">Terms & Conditions</a></li> */}
+                            <li><a href="https://snapcardtravel.co.uk/" className="hover:text-white transition">snapcardtravel.co.uk</a></li>
                         </ul>
                     </div>
                 </div>
