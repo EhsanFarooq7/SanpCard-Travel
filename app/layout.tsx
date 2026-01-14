@@ -16,6 +16,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Snapcard Travel",
   description: "Your Journey Begins Here",
+  icons: {
+    icon: "/favicon.svg", // This points to app/icon.svg
+    apple: "/favicon.svg", // Optional: for iPhone home screens
+  },
 };
 
 export default function RootLayout({
